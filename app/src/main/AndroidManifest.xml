@@ -37,6 +37,30 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.levin.notekeeper.MainActivity"/>
         </activity>
+
+        <provider
+            android:name=".NoteKeeperProvider"
+            android:authorities="com.levin.notekeeper.provider"
+            android:enabled="true"
+            android:exported="true">
+        </provider>
+
+        <service
+            android:name=".NoteBackupService"
+            android:exported="false">
+        </service>
+        <service
+            android:name=".NoteUploaderJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+        </service>
+
+        <receiver
+            android:name=".NoteReminderReceiver"
+            android:enabled="true"
+            android:exported="true">
+        </receiver>
     </application>
 
 </manifest>
